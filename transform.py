@@ -4,7 +4,11 @@ import datetime
 class transform_df():
 
     def __init__(self = 0):
-        self.a = 1
+        self.a = 0
+
+    def transform_df_(self,df):
+        df.loc[1, 'column1'] = 'test'
+        return df
 
     def add_row(self,df, date, message, repeat):
         df2 = pd.DataFrame({"date": [date], "message": [message], "repeat": [repeat]})
