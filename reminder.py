@@ -4,9 +4,9 @@ import os
 import json
 import datetime as dt
 import asyncore
-import static_variables
+from transform import transform_df
 
-path_table_reminder = r'C:\Users\Rikky\telegram_bot\reminder_bot\table_reminder4.json'
+path_table_reminder = r'C:\Users\Rikky\telegram_bot\reminder_bot\table_reminder.json'
 json_start = {
                 "date":{"0":"2021-03-27",
                     "1":"2021-03-27",
@@ -48,7 +48,7 @@ def rewrite_csv(df):
     else: print("File doesn't exists!")
     writer_json(df)
 
-def transform_df(df):
+def transform_df_(df):
     df.loc[1, 'column1'] = 'test'
     return df
 
@@ -60,5 +60,8 @@ if __name__ =='__main__':
     # print(dt.datetime.now())
     create_json_table()
     df = reader_json()
+    trans = transform_df()
+    df = trans.delet_row(df,3)
+    # tes = trans.test(4,3)
     print(df)
     
