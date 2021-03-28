@@ -5,6 +5,8 @@ import json
 import datetime as dt
 import asyncore
 from transform import transform_df
+import time
+import datetime
 
 path_table_reminder = r'C:\Users\Rikky\telegram_bot\reminder_bot\table_reminder.json'
 json_start = {
@@ -63,5 +65,10 @@ if __name__ =='__main__':
     trans = transform_df()
     df = trans.delet_row(df,3)
     # tes = trans.test(4,3)
-    print(df)
-    
+    print(datetime.datetime.fromtimestamp(time.time()))
+
+# datetime.datetime(2020, 5, 6, 13, 52, 5)
+
+# дальше работаем как с объектом 
+# получаем строку 
+# >>> dt.strfptint('%d.%m.%Y %H:%M')
